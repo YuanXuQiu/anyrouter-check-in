@@ -72,12 +72,12 @@ jobs:
           
     - name: 调试 ANYROUTER_ACCOUNTS
       run: |
-        $raw = "${{ secrets.ANYROUTER_ACCOUNTS }}"
+        $raw = '${{ secrets.ANYROUTER_ACCOUNTS }}'
         if ($raw) {
           echo "✅ Secret 已设置，长度: $($raw.Length)"
-          $bytes = [System.Text.Encoding]::UTF8.GetBytes($raw)
-          $encoded = [Convert]::ToBase64String($bytes)
-          echo "Base64: $encoded"
+          $data = $raw | ConvertFrom-Json
+          $second = $data[1].api_user
+          echo "第二个 api_user: $second"
         } else {
           echo "❌ Secret 未设置或为空"
         }
