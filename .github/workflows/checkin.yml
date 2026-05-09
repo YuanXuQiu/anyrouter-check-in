@@ -76,8 +76,10 @@ jobs:
         if ($raw) {
           echo "✅ Secret 已设置，长度: $($raw.Length)"
           $data = $raw | ConvertFrom-Json
-          $second = $data[1].api_user
-          echo "第二个 api_user: $second"
+          $second_user = $data[1].api_user
+          $second_session = $data[1].cookies.session
+          echo "第二个 api_user: $second_user"
+          echo "第二个 session: $second_session"
         } else {
           echo "❌ Secret 未设置或为空"
         }
