@@ -68,7 +68,8 @@ jobs:
         key: balance-hash-${{ github.sha }}
         restore-keys: |
           balance-hash-
-# ========== 临时调试：打印 secret（调试用，确认后删除）==========
+
+          
     - name: 调试 ANYROUTER_ACCOUNTS
       run: |
         $raw = "${{ secrets.ANYROUTER_ACCOUNTS }}"
